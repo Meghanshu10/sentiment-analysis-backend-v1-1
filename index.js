@@ -3,7 +3,8 @@
 
 const needle = require('needle');
 const express = require('express')
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const { query } = require('express');
 
 // The code below sets the bearer token from your environment variables
 // To set environment variables on macOS or Linux, run the export command below from the terminal:
@@ -68,8 +69,8 @@ app.get('/', (req, res) => {
 })
 
 //getTweetData(Get Route)
-app.get('/getTweetData', function(req, res){
-    start("salman").then((result) => {
+app.get('/getTweetData/:query', function(req, res){
+    start(req.params.query).then((result) => {
         console.log(JSON.stringify(result));
         res.send(result)
     })
