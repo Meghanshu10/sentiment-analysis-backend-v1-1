@@ -5,6 +5,7 @@ const needle = require('needle');
 const express = require('express')
 const bodyParser = require('body-parser');
 const { query } = require('express');
+const port = process.env.PORT || 3000
 
 // The code below sets the bearer token from your environment variables
 // To set environment variables on macOS or Linux, run the export command below from the terminal:
